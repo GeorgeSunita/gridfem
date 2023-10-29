@@ -1,209 +1,137 @@
-import Head from 'next/head'
+import { TestimonialCards } from "../components/TestimonialCards";
 
 export default function Home() {
+  const cards = [
+    {
+      backgroundColor: "hsl(263, 55%, 52%)",
+      color: "hsl(0, 0%, 100%)",
+      image: "/image-daniel.jpg",
+      name: "Daniel Clifford",
+      reviewMain:
+        "I received a job offer mid-course, and the subjects I learned were current, if not more so, in the company I joined. I honestly feel I got every penny’s worth.",
+      reviewQuotes:
+        "I was an EMT for many years before I joined the bootcamp.I’ve been looking to make a transition and have heard some people who had an amazing experience here. I signed up for the free intro course and found it incredibly fun! I enrolled shortly thereafter. The next 12 weeks was the best - and most grueling - time of my life. Since completing the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup.",
+      title: "Verified Graduate",
+      gridTemplateArea: "a",
+    },
+    {
+      backgroundColor: "hsl(217, 19%, 35%)",
+      color: "hsl(0, 0%, 100%)",
+      image: "/image-jonathan.jpg",
+      name: "Jonathan Walters",
+      reviewMain: "The team was very supportive and kept me motivated.",
+      reviewQuotes:
+        "I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company.This was one of the best investments I’ve made in myself.",
+      title: "Verified Graduate",
+      gridTemplateArea: "b",
+    },
+    {
+      backgroundColor: "hsl(0, 0%, 100%)",
+      color: "hsl(217, 19%, 35%)",
+
+      image: "/image-kira.jpg",
+      name: "Kira Whittle",
+      reviewMain: "Such a life-changing experience. Highly recommended!",
+      reviewQuotes:
+        "Before joining the bootcamp, I’ve never written a line of code. I needed some structure from professionals who can help me learn programming step by step. I was encouraged to enroll by a former student of theirs who can only say wonderful things about the program. The entire curriculum and staff did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial could ever have.In fact, I’ve often referred to it during interviews as anexample of my developent experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 100% recommend!",
+      title: "Verified Graduate",
+      gridTemplateArea: "c",
+    },
+    {
+      backgroundColor: "hsl(0, 0%, 100%)",
+      color: "hsl(217, 19%, 35%)",
+      image: "/image-jeanette.jpg",
+      name: "Jeanette Harmon",
+      reviewMain: "An overall wonderful and rewarding experience",
+      reviewQuotes:
+        "Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love.",
+      title: "Verified Graduate",
+      gridTemplateArea: "d",
+    },
+    {
+      backgroundColor: "hsl(219, 29%, 14%)",
+      color: "hsl(0, 0%, 100%)",
+      image: "/image-patrick.jpg",
+      name: "Patrick Abrams",
+      reviewMain:
+        "Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and learning from their experiences was easy.",
+      reviewQuotes:
+        "The staff seem genuinely concerned about my progress which I find really refreshing. The program gave me the confidence necessary to be able to go out in the world and present myself as a capable junior developer. The standard is above the rest. You will get the personal attention you need from an incredible community of smart and amazing people. ",
+      title: "Verified Graduate",
+      gridTemplateArea: "e",
+    },
+  ];
+
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
+    <>
+      <div className="container stack v">
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          {cards.map(function (elem) {
+            return (
+              <TestimonialCards
+                backgroundColor={elem.backgroundColor}
+                color={elem.color}
+                image={elem.image}
+                gridTemplateArea={elem.gridTemplateArea}
+                name={elem.name}
+                reviewMain={elem.reviewMain}
+                reviewQuotes={elem.reviewQuotes}
+                title={elem.title}
+              />
+            );
+          })}
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
-
+      </div>
       <style jsx>{`
         .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
           align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
           justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+          margin: 10rem auto;
+          width: 50vw;
+          height: 50vh;
         }
 
         .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
+          display: grid;
+          grid-gap: 10px;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-areas:
+            "a a b c"
+            "d e e c";
         }
 
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
+        @media (max-width: 1390px) {
+          .container {
+            width: 60%;
+            height: 50vh;
+            margin: 10rem auto;
+          }
         }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+        @media (max-width: 900px) {
+          .container {
+            width: 80%;
+            margin: 20rem auto;
+          }
         }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 420px) {
+          .container {
+            width: 90%;
+            margin: 1rem 0.5rem;
+          }
           .grid {
-            width: 100%;
-            flex-direction: column;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(6, 0.5fr);
+            grid-template-areas:
+              "a "
+              "a"
+              "b"
+              "c"
+              "e"
+              "d";
           }
         }
       `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+    </>
+  );
 }
